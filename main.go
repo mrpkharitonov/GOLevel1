@@ -6,8 +6,9 @@ import (
 )
 
 func main() {
-	var a, b float32
-	var c, d float64
+	/*var a, b float32
+	var c, d float64*/
+	var e, f, g, h int
 
 	fmt.Print("введите первую сторону прямоугольника ")
 	fmt.Scanln(&a)
@@ -25,6 +26,14 @@ func main() {
 	fmt.Printf("радиус круга: %f\n", d)
 	fmt.Printf("диаметр круга: %f\n", d*2)
 
-	//todo: не успел 3.	С клавиатуры вводится трехзначное число. Выведите цифры, соответствующие количество сотен, десятков и единиц  в этом числе. прошу отсрочку
+	fmt.Print("введите 3х значное число ")
+	fmt.Scanln(&e)
 
+	h = e % 10
+	g = (e - h) % 100
+	f = (e - g - h)
+
+	fmt.Printf("сотни: %d\n", f/100)
+	fmt.Printf("десятки: %d\n", g/10)
+	fmt.Printf("единицы: %d\n", h)
 }
