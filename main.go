@@ -17,16 +17,17 @@ func main() {
 	fmt.Scanln(&y)
 
 	if x == x0 {
-		if y == y0 {
-			if len(op) < 1 {
-				fmt.Println("не ввели оператор")
-				os.Exit(1)
-				//почему-то не срабатывает, выпадает с ошибкой в проверке в default, где проверяется доступность функции
-			}
-			fmt.Println("не ввели вторую цифру")
-			os.Exit(1)
-		}
 		fmt.Println("не ввели первую цифру")
+		os.Exit(1)
+	}
+
+	if y == y0 {
+		fmt.Println("не ввели вторую цифру")
+		os.Exit(1)
+	}
+
+	if len(op) < 1 {
+		fmt.Println("не ввели оператор")
 		os.Exit(1)
 	}
 
