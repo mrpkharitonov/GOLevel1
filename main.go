@@ -8,23 +8,20 @@ import (
 	"strconv"
 )
 
-func CustomSort(us []int) {
+func permutationMethodSort(us []int) []int {
 
-	sortUnsort := make([]int, len(us))
-	copy(sortUnsort, us)
-
-	n := len(sortUnsort)
+	n := len(us)
 
 	for i := 0; i < n; i++ {
 		min := i
 		for j := i + 1; j < n; j++ {
-			if sortUnsort[j] < sortUnsort[min] {
+			if us[j] < us[min] {
 				min = j
 			}
 		}
-		sortUnsort[i], sortUnsort[min] = sortUnsort[min], sortUnsort[i]
+		us[i], us[min] = us[min], us[i]
 	}
-	fmt.Println(sortUnsort)
+	return us
 }
 
 func main() {
@@ -51,5 +48,5 @@ func main() {
 	fmt.Println(unsort)
 
 	fmt.Println("\nотсортированный")
-	CustomSort(unsort)
+	fmt.Println(permutationMethodSort(unsort))
 }
